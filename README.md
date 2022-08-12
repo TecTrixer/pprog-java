@@ -8,6 +8,7 @@ This repository contains all the reference implementations of the different lock
 
 ## Concepts
 - spawning a thread
+- measuring time
 - random order execution
 - data race
 - synchronized keyword
