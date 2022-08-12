@@ -25,7 +25,7 @@ public class Synchronized {
     }
 }
 
-// Thread in which the data race occurs.
+// Thread in which the data race is being prevented by using synchronized.
 class AddThread extends Thread {
     IntegerReference data;
     int iterations;
