@@ -8,11 +8,15 @@ This repository contains all the reference implementations of the different lock
 
 ## Concepts
 - spawning a thread
+- random order execution
+- data race
+- synchronized keyword
+- using locks
 - partitioning data
-- using synchronized
 - 
 
 ## Problems
+- add 1 several times to a number shared in different threads
 - multiply every number in array by 2
 - add every two consecutive numbers
 - check whether a number is prime
