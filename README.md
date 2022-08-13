@@ -34,3 +34,11 @@ Showing the non-deterministic outcome when modifying the same data in parallel w
 
 #### - Synchronized:
 Ensuring the correct execution of the DataRace program by using the synchronized keyword.
+
+### Locks
+
+#### - Dekker's Lock:
+Using this lock algorithm to ensure correct outcome of parallel modification of data. This algorithm only works when using the volatile keyword to prevent instruction reordering.
+
+#### - Peterson Lock:
+Using this lock algorithm to ensure correct outcome of parallel modification of data. This algorithm only works when using AtomicIntegerArrays.
