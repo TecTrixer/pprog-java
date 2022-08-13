@@ -1,6 +1,6 @@
 public class MeasureTime {
     public static void main(String[] args) {
-        Thread t = new ComputeThread(1234);
+        Thread t = new MeasureTimeThread(1234);
         System.out.println("Starting thread.");
         long startTime = System.nanoTime();
         t.start();
@@ -17,9 +17,9 @@ public class MeasureTime {
     }
 }
 
-class ComputeThread extends Thread {
+class MeasureTimeThread extends Thread {
     int sleepTime;
-    ComputeThread(int sleepTime) {
+    MeasureTimeThread(int sleepTime) {
         this.sleepTime = sleepTime;
     }
     public void run() {

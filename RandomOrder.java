@@ -3,8 +3,8 @@ public class RandomOrder {
         int iterations = 10;
 
         // Creating both threads and letting them execute in parallel.
-        Thread t1 = new AddThread(iterations, 1);
-        Thread t2 = new AddThread(iterations, 2);
+        Thread t1 = new RandomOrderAddThread(iterations, 1);
+        Thread t2 = new RandomOrderAddThread(iterations, 2);
         
         // Starting both threads, here the order isn't well defined anymore.
         t1.start();
@@ -23,12 +23,12 @@ public class RandomOrder {
 }
 
 // Thread which will print if its currently running.
-class AddThread extends Thread {
+class RandomOrderAddThread extends Thread {
     int iterations;
     int id;
 
     // Class constructor
-    public AddThread(int iterations, int id) {
+    public RandomOrderAddThread(int iterations, int id) {
         this.iterations = iterations;
         this.id = id;
     }

@@ -5,8 +5,8 @@ public class Synchronized {
         int iterations = 10000;
 
         // Creating both threads and giving both the reference to the same data.
-        Thread t1 = new AddThread(data, iterations);
-        Thread t2 = new AddThread(data, iterations);
+        Thread t1 = new SynchronizedAddThread(data, iterations);
+        Thread t2 = new SynchronizedAddThread(data, iterations);
         
         // Starting both threads, here the behaviour isn't well defined anymore.
         t1.start();
@@ -25,33 +25,3 @@ public class Synchronized {
     }
 }
 
-// Thread in which the data race is being prevented by using synchronized.
-class AddThread extends Thread {
-    IntegerReference data;
-    int iterations;
-
-    // Class constructor
-    public AddThread(IntegerReference data, int iterations) {
-        this.data = data;
-        this.iterations = iterations;
-    }
-
-    // Main running method
-    public void run() {
-        // Adding 1 to the data for each iteration.
-        for (int i = 0; i < this.iterations; i++) {
-            // Using synchronized to lock the data object for modification
-            synchronized (this.data) {
-                this.data.data = this.data.data + 1;
-            }
-        }
-    }
-}
-
-// This is a replacement for Integer so it doesn't have weird behaviour.
-class IntegerReference {
-    public int data;
-    IntegerReference(int data) {
-        this.data = data;
-    }
-}
