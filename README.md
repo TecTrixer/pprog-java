@@ -1,23 +1,36 @@
-# PProg
-
 ## About
 This repository contains all the reference implementations of the different locks and principles needed for the PProg exam.
 
-## Locks
-- 
+## How to use
+Compile using:
+```sh
+javac *.java
+```
+Then you can run the concepts with their respective concept name:
+```sh
+java <ConceptName>
+```
 
+To see the outcome of the DataRace concept the commands would be the following:
+```sh
+javac *.java
+java DataRace
+```
 ## Concepts
-- spawning a thread
-- measuring time
-- random order execution
-- data race
-- synchronized keyword
-- using locks
-- partitioning data
-- 
 
-## Problems
-- add 1 several times to a number shared in different threads
-- multiply every number in array by 2
-- add every two consecutive numbers
-- check whether a number is prime
+### Basics
+
+#### - ThreadCreation:
+Using two different methods to create threads, extending Thread and implementing Runnable.
+
+#### - MeasureTime:
+Learning how to measure the time of executing threads using System.nanoTime().
+
+#### - RandomOrder:
+Demonstrating the random order of parallel thread execution.
+
+#### - DataRace:
+Showing the non-deterministic outcome when modifying the same data in parallel without any locks.
+
+#### - Synchronized:
+Ensuring the correct execution of the DataRace program by using the synchronized keyword.
